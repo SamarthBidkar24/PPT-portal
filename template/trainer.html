@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trainer Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">Trainer Dashboard</span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h4>Upload PPTs & Assignments</h4>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="file" name="file" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <select name="role" class="form-select">
+                    <option value="ppt">PPT</option>
+                    <option value="assignment">Assignment</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
